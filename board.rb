@@ -1,6 +1,7 @@
 require_relative "tile"
-
+require "byebug"
 class Board
+
   def self.empty_grid
     Array.new(9) do
       Array.new(9) { Tile.new(0) }
@@ -23,13 +24,16 @@ class Board
 
   def [](pos)
     x, y = pos
+    debugger
     grid[x][y]
   end
 
   def []=(pos, value)
     x, y = pos
+    grid[x][y] = value
     tile = grid[x][y]
     tile.value = value
+
   end
 
   def columns
