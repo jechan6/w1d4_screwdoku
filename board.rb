@@ -24,7 +24,7 @@ class Board
 
   def [](pos)
     x, y = pos
-    debugger
+
     grid[x][y]
   end
 
