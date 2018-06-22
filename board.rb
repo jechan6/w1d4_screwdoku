@@ -17,7 +17,7 @@ class Board
     self.new(tiles)
   end
 
-  def initialize(grid = self.class.empty_grid)
+  def initialize(grid = self.empty_grid)
     @grid = grid
   end
 
@@ -50,11 +50,11 @@ class Board
   def size
     grid.size
   end
-
   def solved?
     rows.all? { |row| solved_set?(row) } &&
       columns.all? { |col| solved_set?(col) } &&
       squares.all? { |square| solved_set?(square) }
+
   end
 
   def solved_set?(tiles)
