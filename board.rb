@@ -1,10 +1,11 @@
 require_relative "tile"
-
+require "byebug"
 class Board
   def self.empty_grid
     Array.new(9) do
       Array.new(9) { Tile.new(0) }
     end
+
   end
 
   def self.from_file(filename)
@@ -12,6 +13,7 @@ class Board
     tiles = rows.map do |row|
       nums = row.split("").map { |char| Integer(char) }
       nums.map { |num| Tile.new(num) }
+
     end
 
     self.new(tiles)
@@ -19,6 +21,7 @@ class Board
 
   def initialize(grid = self.class.empty_grid)
     @grid = grid
+
   end
 
   def [](pos)
@@ -58,6 +61,7 @@ class Board
   end
 
   def solved_set?(tiles)
+
     nums = tiles.map(&:value)
     nums.sort == (1..9).to_a
   end

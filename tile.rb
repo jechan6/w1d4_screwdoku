@@ -1,7 +1,7 @@
 require "colorize"
 
 class Tile
-  attr_accessor :value
+  attr_reader :value
 
   def initialize(value)
     @value = value
@@ -21,7 +21,6 @@ class Tile
   end
 
   def value=(new_value)
-    p new_value
     if given?
       puts "You can't change the value of a given tile."
     else
