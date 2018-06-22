@@ -1,3 +1,4 @@
+require "colorize"
 class Board
   def self.empty_grid
     Array.new(9) do
@@ -109,7 +110,7 @@ class Tile
       @value = new_value
     end
   end
-
+end
 class SudokuGame
   def self.from_file(filename)
     board = Board.from_file(filename)
@@ -186,8 +187,8 @@ class SudokuGame
 
   private
   attr_reader :board
-end
 
+end
 
 game = SudokuGame.from_file("puzzles/sudoku1.txt")
 game.run
